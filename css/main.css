@@ -4,3 +4,27 @@
     display: none;
 }
 
+body{
+    display: block;
+}
+
+
+.box_f {
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+.box_v {
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    padding: 100px 0px 100px 0px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
