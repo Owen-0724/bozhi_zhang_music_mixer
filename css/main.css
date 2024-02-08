@@ -29,7 +29,8 @@ body{
     margin-bottom:10px;
 }
 
-/** when play, start rotate
+/** when play, start rotate**/
+
 #disk{
     animation: rotate 4s;
     animation-timing-function: linear;
