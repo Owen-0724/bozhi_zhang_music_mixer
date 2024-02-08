@@ -28,3 +28,15 @@ body{
     margin-top: 10px;
     margin-bottom:10px;
 }
+
+/** when play, start rotate
+#disk{
+    animation: rotate 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    0% {rotate: 0deg;}
+    100% {rotate: 360deg;}
+}
