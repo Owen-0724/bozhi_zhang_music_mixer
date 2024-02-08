@@ -1,1 +1,2 @@
-# bozhi_zhang_music_mixer
+# HW3-Music Mixer
+## Bozhi Zhang
