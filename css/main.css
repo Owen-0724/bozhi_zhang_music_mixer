@@ -6,6 +6,7 @@
 
 body{
     display: block;
+    background-image: linear-gradient(purple,red,yellow);
 }
 
 
