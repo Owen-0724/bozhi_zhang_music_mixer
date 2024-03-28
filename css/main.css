@@ -30,8 +30,18 @@ body{
     margin-bottom:10px;
 }
 
-/** when play, start rotate**/
-
+.box_s {
+    display: inline;
+    background-color: gray;
+    color: white;
+    border-radius: 2px;
+    width: 10px;
+    height: 10px;
+    
+    text-align: center;
+    
+}
+/** when play, start rotate
 #disk{
     animation: rotate 4s;
     animation-timing-function: linear;
@@ -42,3 +52,4 @@ body{
     0% {rotate: 0deg;}
     100% {rotate: 360deg;}
 }
+**/
