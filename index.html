@@ -14,31 +14,39 @@
         <section class="grid-con">
             <h2 class="hidden">disk and volume</h2>
             <img class="l-col-start-4" id="disk" src="images/disk.png" alt="black disk" width="400px">
-            <div class="box_v l-col-start-10 l-col-end-11">
-                <div class="box_s">1</div>
-                <div class="box_s">2</div>
-                <div class="box_s">3</div>
-                <div class="box_s">4</div>
-                <div class="box_s">5</div>
-                <div class="box_s">6</div>
+            <div class="simple_set box_v l-col-start-10 l-col-end-11">
+                <img src="images/drum.svg" width="40px" id="track1" data-audio="audio/drum.wav">
+                <img src="images/bass.svg" width="40px" id="track2" data-audio="audio/bass.wav">
+                <!--<div class="simple box_s">1
+                    
+                </div>
+                <div class="simple box_s">2
+                    
+                </div>
+                <div class="simple box_s">3</div>
+                <div class="simple box_s">4</div>
+                <div class="simple box_s">5</div>
+                <div class="simple box_s">6</div>
+            -->
             </div>
-            <div class="box_v l-col-start-11 l-col-end-12">volume</div>
+            <input id="volume_control" type="range" min="0" max="100" step="1">
         </section>
-        <section class="grid-con">
+        <section class="grid-con soundtracks">
             <h2 class="hidden">soundtracks</h2>
-            <div class="box_f l-col-start-4 l-col-span-1 drop_zone">track1</div>
-            <div class="box_f l-col-span-1 drop_zone">track2</div>
-            <div class="box_f l-col-span-1 drop_zone">track3</div>
-            <div class="box_f l-col-span-1 drop_zone">track4</div>
-            <div class="box_f l-col-span-1 drop_zone">track5</div>
-            <div class="box_f l-col-span-1 drop_zone">track6</div>
+            <div class="box_f l-col-start-4 l-col-span-1 drop_zone"></div>
+            <div class="box_f l-col-span-1 drop_zone"></div>
+            <div class="box_f l-col-span-1 drop_zone"></div>
+            <div class="box_f l-col-span-1 drop_zone"></div>
+            <div class="box_f l-col-span-1 drop_zone"></div>
+            <div class="box_f l-col-span-1 drop_zone"></div>
         </section>
         <section class="grid-con">
             <h2 class="hidden">functions</h2>
-            <div class="box_f l-col-start-4 l-col-span-1">Play</div>
-            <div class="box_f l-col-span-1">Pause</div>
-            <div class="box_f l-col-span-1">Loop</div>
-            <div class="box_f l-col-span-1">Reset</div>
+            <div id="play_btn" class="box_f l-col-start-4 l-col-span-1">play</div>
+            <div id="pause_btn" class="box_f l-col-span-1">pause</div>
+            <div id="loop_btn" class="box_f l-col-span-1">Loop</div>
+            <div id="restart_btn" class="box_f l-col-span-1">restart</div>
+            <div id="reset_btn" class="reset_btn box_f l-col-span-1">Reset</div>
         </section>
         
     </main>
