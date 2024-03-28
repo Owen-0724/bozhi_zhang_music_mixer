@@ -1,5 +1,5 @@
-let puzzleBoard = document.querySelector(".soundtracks"),
-    puzzlePieces = document.querySelectorAll(".simple_set img"),
+let soundtracks = document.querySelector(".soundtracks"),
+    simpleSet = document.querySelectorAll(".simple_set img"),
     dropZone = document.querySelectorAll('.drop_zone'),
     draggedPiece,
     audioElements = [],
@@ -14,12 +14,12 @@ const playButton = document.querySelector('#play_btn'),
 
 const originalParents = {};
 
-puzzlePieces.forEach(piece => {
+simpleSet.forEach(piece => {
     originalParents[piece.id] = piece.parentElement;
 });
 
 function reset() {
-    puzzlePieces.forEach(piece => {
+    simpleSet.forEach(piece => {
         originalParents[piece.id].appendChild(piece);
     });
     pauseAudio();
@@ -90,7 +90,7 @@ function toggleLoop() {
     });
 }
 
-puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
+simpleSet.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
 dropZone.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
 resetBtn.addEventListener("click", reset);
