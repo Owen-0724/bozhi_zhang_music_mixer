@@ -1,15 +1,13 @@
 let 
 	puzzleBoard = document.querySelector(".soundtracks"),
 	puzzlePieces = document.querySelectorAll(".simple_set img"),
-	dropZones = document.querySelectorAll('.drop_zone'),
+	dropZone = document.querySelectorAll('.drop_zone'),
 	
 	draggedPiece,
 
     resetBtn = document.querySelector('#reset_btn');
 
 const
-    albumCovers = document.querySelectorAll("#album-art img"),
-    theAudioEl = document.querySelector('#audioEl'),
     playButton = document.querySelector('#play_btn'),
     pauseButton = document.querySelector('#pause_btn'),
     rewindButton = document.querySelector('#restart_btn'),
@@ -48,18 +46,21 @@ function handleDrop(e) {
 	};
 }
 
-function playSelectedTracks() {
-    let selectedTracks = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(checkbox => checkbox.value);
-  
-    selectedTracks.forEach(track => {
-      let audio = new Audio(track);
-      audio.play();
+function playAllTracks() {
+    dropZone.forEach(zone => {
+        const audioElements = Array.from(zone.querySelectorAll('img'));
+        audioElements.forEach(audio => {
+            let audioFile = audio.getAttribute('data-audio');
+            if (audioFile) {
+                let audioEl = new Audio(audioFile);
+                audioEl.play();
+            }
+        });
     });
-  }
-
+};
 puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
-dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
-dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
+dropZone.forEach(zone => zone.addEventListener("dragover", handleDragOver));
+dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
 
 resetBtn.addEventListener("click",reset);
-playButton.addEventListener("click",playSelectedTracks);
+playButton.addEventListener("click",playAllTracks);
