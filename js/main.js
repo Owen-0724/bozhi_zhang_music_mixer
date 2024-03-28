@@ -4,9 +4,24 @@ let
 	puzzlePieces = document.querySelectorAll(".simple_set img"),
 	dropZones = document.querySelectorAll('.drop_zone'),
 	
-	draggedPiece;
+	draggedPiece,
 
+    resetBtn = document.querySelector('.reset_btn');
 
+const originalParents = {};
+
+// Initialize originalParents object with the original parent of each puzzle piece
+puzzlePieces.forEach(piece => {
+    originalParents[piece.id] = piece.parentElement;
+});
+
+function reset() {
+    // Move each puzzle piece back to its original parent
+    puzzlePieces.forEach(piece => {
+        originalParents[piece.id].appendChild(piece);
+    });
+
+}
 function handleStartDrag() { 
 	console.log('started dragging this piece:', this);
 	// store a reference to the puzzle piece image that we're dragging
@@ -29,6 +44,9 @@ function handleDrop(e) {
 	// into whatever drop zone we choose. appendChild means "add element to the container"
 	this.appendChild(draggedPiece);
 }
+
+
+
 // step 2
 // event handling always goes at the bottom => 
 // how do we want users to interact with our app
@@ -46,3 +64,5 @@ dropZones.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 
 // add the drop event handling
 dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
+
+resetBtn.addEventListener("click",reset);
