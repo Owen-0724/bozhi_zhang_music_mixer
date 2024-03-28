@@ -22,6 +22,7 @@ function reset() {
     puzzlePieces.forEach(piece => {
         originalParents[piece.id].appendChild(piece);
     });
+    pauseAudio();
 }
 
 function handleStartDrag() { 
