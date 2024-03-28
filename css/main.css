@@ -4,6 +4,17 @@
     display: none;
 }
 
+#disk{
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto; 
+}
+#text{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 40px;
+}
+
 body{
     display: block;
     background-image: linear-gradient(purple,red,yellow);
@@ -77,9 +88,9 @@ body{
     margin-right: auto;
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 200%;
     height: 10px;
-    background: #d3d3d3;
+    background: black;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -87,8 +98,12 @@ body{
 }
 #volume_control:hover {
     opacity: 1;
-  }
-/** when play, start rotate
+}
+
+.btn_color{
+    color: red !important;
+}
+
 #disk{
     animation: rotate 4s;
     animation-timing-function: linear;
@@ -99,4 +114,4 @@ body{
     0% {rotate: 0deg;}
     100% {rotate: 360deg;}
 }
-**/
+

@@ -94,7 +94,11 @@ simpleSet.forEach(piece => piece.addEventListener("dragstart", handleStartDrag))
 dropZone.forEach(zone => zone.addEventListener("dragover", handleDragOver));
 dropZone.forEach(zone => zone.addEventListener("drop", handleDrop));
 resetBtn.addEventListener("click", reset);
-playButton.addEventListener("click", playAllTracks);
+playButton.addEventListener("click", function() {
+    playAllTracks();
+    playButton.classList.toggle('btn_color');
+});
+
 restartButton.addEventListener('click', restartAudio);
 pauseButton.addEventListener('click', pauseAudio);
 volSlider.addEventListener('change', setVolume);
