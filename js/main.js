@@ -10,13 +10,11 @@ let
 
 const originalParents = {};
 
-// Initialize originalParents object with the original parent of each puzzle piece
 puzzlePieces.forEach(piece => {
     originalParents[piece.id] = piece.parentElement;
 });
 
 function reset() {
-    // Move each puzzle piece back to its original parent
     puzzlePieces.forEach(piece => {
         originalParents[piece.id].appendChild(piece);
     });
@@ -42,7 +40,11 @@ function handleDrop(e) {
 
 	// this line is going to move the dragged piece from the left side of the board
 	// into whatever drop zone we choose. appendChild means "add element to the container"
-	this.appendChild(draggedPiece);
+	if (this.childElementCount === 0) {
+		this.appendChild(draggedPiece);
+	} else {
+		
+	};
 }
 
 
